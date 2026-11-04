@@ -80,7 +80,11 @@ export default function Sidebar() {
           📥 Nhập hàng
         </Link>
 
-        <Link to="/online-orders" style={menuStyle("/online-orders")}>\n          🌐 Đơn hàng Online\n        </Link>\n\n        <Link to="/orders" style={menuStyle("/orders")}>
+        <Link to="/online-orders" style={menuStyle("/online-orders")}>
+          🌐 Đơn hàng Online
+        </Link>
+
+        <Link to="/orders" style={menuStyle("/orders")}>
           🧾 Hóa đơn
         </Link>
 
