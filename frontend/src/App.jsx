@@ -137,6 +137,17 @@ export default function App() {
           ORDERS
       =========================== */}
       <Route
+        path="/online-orders"
+        element={
+          <ProtectedRoute roles={["Admin", "Manager", "Cashier"]}>
+            <MainLayout>
+              <OnlineOrders />
+            </MainLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
         path="/orders"
         element={
           <ProtectedRoute roles={["Admin", "Manager", "Cashier"]}>
