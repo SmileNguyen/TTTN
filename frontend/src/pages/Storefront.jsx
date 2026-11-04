@@ -156,7 +156,7 @@ export default function Storefront() {
 
       {view === "success" && success && <main className="store-main success-panel"><div className="success-icon">✓</div><span className="eyebrow">ĐẶT HÀNG THÀNH CÔNG</span><h2>Cảm ơn bạn đã mua hàng!</h2><p>Đơn hàng <b>{success.invoice_code}</b> đã được ghi nhận.</p><p>Tổng giá trị: <strong>{formatVnd(success.total)}</strong></p><p>Trạng thái: Chờ xác nhận</p><button className="primary-button" onClick={() => { setSuccess(null); setView("catalog"); }}>Tiếp tục mua sắm</button></main>}
 
-      <footer className="store-footer"><div className="store-brand"><span className="brand-mark">P</span><span>PEKO<span className="brand-light">TECH</span><small>LINH KIỆN MÁY TÍNH</small></span></div><p>Website kinh doanh linh kiện máy tính</p><small>© {new Date().getFullYear()} TAI TECH. All rights reserved.</small></footer>
+      <footer className="store-footer"><div className="store-brand"><span className="brand-mark">T</span><span>TAI <span className="brand-light">TECH</span><small>LINH KIỆN MÁY TÍNH</small></span></div><p>Website kinh doanh linh kiện máy tính</p><small>© {new Date().getFullYear()} TAI TECH. All rights reserved.</small></footer>
     </div>
   );
 }
