@@ -225,3 +225,34 @@ exports.deleteOrder = async (req, res) => {
     });
   }
 };
+
+
+// ===========================================
+// CONFIRM ONLINE ORDER
+// ===========================================
+exports.updateOrderStatus = async (req, res) => {
+  try {
+    const { status } = req.body || {};
+    if (status !== "Confirmed") {
+      return res.status(400).json({ message: "Trạng thái cập nhật không hợp lệ" });
+    }
+
+    const order = await Order.findById(req.params.id);
+    if (!order) {
+      return res.status(404).json({ message: "Không tìm thấy đơn hàng" });
+    }
+    if (order.source !== "Online") {
+      return res.status(400).json({ message: "Chỉ áp dụng cho đơn hàng Online" });
+    }
+    if (order.status !== "Pending") {
+      return res.status(409).json({ message: "Đơn hàng không còn ở trạng thái chờ xác nhận" });
+    }
+
+    order.status = "Confirmed";
+    await order.save();
+    return res.json({ message: "Đã xác nhận đơn hàng", order });
+  } catch (error) {
+    console.error("updateOrderStatus:", error);
+    return res.status(500).json({ message: "Không thể cập nhật trạng thái đơn hàng" });
+  }
+};
