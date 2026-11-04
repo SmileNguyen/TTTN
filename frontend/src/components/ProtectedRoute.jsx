@@ -30,7 +30,7 @@ export default function ProtectedRoute({ children, roles = [] }) {
   // Chưa đăng nhập
   // ===================================
   if (!isAuthenticated) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   // ===================================
