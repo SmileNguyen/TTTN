@@ -158,6 +158,8 @@ export default function Orders() {
             <tr>
               <th style={{ padding: 15 }}>Mã HD</th>
               <th>Khách hàng</th>
+              <th>Nguồn đơn</th>
+              <th>Trạng thái</th>
               <th>Nhân viên</th>
               <th>Ngày</th>
               <th>Tổng tiền</th>
@@ -170,7 +172,7 @@ export default function Orders() {
             {filteredOrders.length === 0 ? (
               <tr>
                 <td
-                  colSpan={7}
+                  colSpan={9}
                   style={{
                     padding: 40,
                     textAlign: "center",
@@ -191,6 +193,10 @@ export default function Orders() {
                   <td style={{ padding: 15 }}>{order.invoice_code}</td>
 
                   <td>{order.customer_name}</td>
+
+                  <td>{order.source === "Online" ? "🌐 Online" : "🏪 POS"}</td>
+
+                  <td>{({ Pending: "Chờ xác nhận", Confirmed: "Đã xác nhận", Shipping: "Đang giao", Completed: "Hoàn tất", Cancelled: "Đã hủy" })[order.status] || order.status}</td>
 
                   <td>{order.employee_name}</td>
 
