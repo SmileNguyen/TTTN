@@ -118,7 +118,7 @@ export default function Storefront() {
           <button className={view === "catalog" ? "active" : ""} onClick={() => setView("catalog")}>Cửa hàng</button>
           <button className={view === "cart" ? "active" : ""} onClick={() => setView("cart")}>Giỏ hàng <b>{totalQuantity}</b></button>
         </nav>
-        <span className="store-support">Tư vấn & hỗ trợ mua hàng</span>
+        <Link to="/login" className="store-support">Đăng nhập nhân viên</Link>
       </header>
 
       {view === "catalog" && <>
