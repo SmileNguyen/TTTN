@@ -48,7 +48,7 @@ export default function Sidebar() {
           marginBottom: 30,
         }}
       >
-        🛒 POS System
+        🛒 Tai Tech
       </h2>
 
       <nav>
@@ -80,7 +80,7 @@ export default function Sidebar() {
           📥 Nhập hàng
         </Link>
 
-        <Link to="/orders" style={menuStyle("/orders")}>
+        <Link to="/online-orders" style={menuStyle("/online-orders")}>\n          🌐 Đơn hàng Online\n        </Link>\n\n        <Link to="/orders" style={menuStyle("/orders")}>
           🧾 Hóa đơn
         </Link>
 
@@ -108,7 +108,7 @@ export default function Sidebar() {
           textAlign: "center",
         }}
       >
-        POS Management System by Nguyễn Trần Tài
+        Tai Tech Management System
         <br />
         Version 13.4.3 (Build 130403)
       </div>
