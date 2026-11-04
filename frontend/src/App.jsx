@@ -16,7 +16,7 @@ import Orders from "./pages/Orders";
 import POS from "./pages/POS";
 import Statistics from "./pages/Statistics";
 import Users from "./pages/Users";
-import Storefront from "./pages/Storefront";
+import Storefront from "./pages/Storefront";\nimport OnlineOrders from "./pages/OnlineOrders";
 
 export default function App() {
   return (
