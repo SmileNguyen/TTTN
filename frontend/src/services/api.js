@@ -227,6 +227,18 @@ export async function createOrder(order) {
   return await response.json();
 }
 
+// UPDATE ONLINE ORDER STATUS
+export async function updateOrderStatus(id, status) {
+  const response = await apiFetch(`${API_URL}/orders/${id}/status`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ status }),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.message || "Không thể cập nhật trạng thái đơn hàng");
+  return data;
+}
+
 // DELETE ORDER
 export async function deleteOrder(id) {
   const response = await apiFetch(`${API_URL}/orders/${id}`, {

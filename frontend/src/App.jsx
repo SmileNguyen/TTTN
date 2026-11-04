@@ -16,14 +16,19 @@ import Orders from "./pages/Orders";
 import POS from "./pages/POS";
 import Statistics from "./pages/Statistics";
 import Users from "./pages/Users";
+import Storefront from "./pages/Storefront";
+import OnlineOrders from "./pages/OnlineOrders";
 
 export default function App() {
   return (
     <Routes>
+      <Route path="/" element={<Storefront />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/shop" element={<Storefront />} />
+      <Route path="/shop/*" element={<Storefront />} />
       {/* ===========================
           LOGIN
       =========================== */}
-      <Route path="/" element={<Login />} />
 
       {/* ===========================
           HOME
@@ -131,6 +136,17 @@ export default function App() {
       {/* ===========================
           ORDERS
       =========================== */}
+      <Route
+        path="/online-orders"
+        element={
+          <ProtectedRoute roles={["Admin", "Manager", "Cashier"]}>
+            <MainLayout>
+              <OnlineOrders />
+            </MainLayout>
+          </ProtectedRoute>
+        }
+      />
+
       <Route
         path="/orders"
         element={

@@ -19,6 +19,7 @@ const supplierRoutes = require("./routes/suppliers");
 const purchaseRoutes = require("./routes/purchases");
 const statisticsRoutes = require("./routes/statistics");
 const authRoutes = require("./routes/auth");
+const storefrontRoutes = require("./routes/storefront");
 
 // ✅ THÊM DÒNG NÀY
 const usersRoutes = require("./routes/users");
@@ -52,6 +53,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // API ROUTES
 // ===============================
 app.use("/auth", authRoutes);
+app.use("/storefront", storefrontRoutes);
 
 // ✅ THÊM DÒNG NÀY
 app.use("/users", usersRoutes);

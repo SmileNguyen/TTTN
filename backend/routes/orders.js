@@ -10,6 +10,7 @@ const {
   getOrderById,
   createOrder,
   deleteOrder,
+  updateOrderStatus,
 } = require("../controllers/orderController");
 
 // ============================================
@@ -49,6 +50,8 @@ router.post(
 // DELETE ORDER
 // Chỉ Admin và Manager
 // ============================================
+router.patch("/:id/status", verifyToken, allowRoles("Admin", "Manager", "Cashier"), updateOrderStatus);
+
 router.delete("/:id", verifyToken, allowRoles("Admin", "Manager"), deleteOrder);
 
 module.exports = router;

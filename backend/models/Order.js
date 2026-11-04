@@ -65,6 +65,11 @@ const OrderSchema = new mongoose.Schema(
       default: "Admin",
     },
 
+    customer_phone: { type: String, default: "" },
+    customer_email: { type: String, default: "" },
+    shipping_address: { type: String, default: "" },
+    source: { type: String, enum: ["POS", "Online"], default: "POS" },
+
     items: {
       type: [OrderItemSchema],
       default: [],
@@ -107,7 +112,7 @@ const OrderSchema = new mongoose.Schema(
 
     status: {
       type: String,
-      enum: ["Completed", "Cancelled"],
+      enum: ["Pending", "Confirmed", "Shipping", "Completed", "Cancelled"],
       default: "Completed",
     },
   },
