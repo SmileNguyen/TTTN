@@ -16,10 +16,13 @@ import Orders from "./pages/Orders";
 import POS from "./pages/POS";
 import Statistics from "./pages/Statistics";
 import Users from "./pages/Users";
+import Storefront from "./pages/Storefront";
 
 export default function App() {
   return (
     <Routes>
+      <Route path="/shop" element={<Storefront />} />
+      <Route path="/shop/*" element={<Storefront />} />
       {/* ===========================
           LOGIN
       =========================== */}
