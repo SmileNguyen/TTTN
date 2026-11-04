@@ -113,7 +113,7 @@ export default function Storefront() {
   return (
     <div className="store-page">
       <header className="store-header">
-        <Link to="/shop" className="store-brand"><span className="brand-mark">P</span><span>PEKO<span className="brand-light">TECH</span><small>LINH KIỆN MÁY TÍNH</small></span></Link>
+        <Link to="/shop" className="store-brand"><span className="brand-mark">T</span><span>TAI <span className="brand-light">TECH</span><small>LINH KIỆN MÁY TÍNH</small></span></Link>
         <nav className="store-nav">
           <button className={view === "catalog" ? "active" : ""} onClick={() => setView("catalog")}>Cửa hàng</button>
           <button className={view === "cart" ? "active" : ""} onClick={() => setView("cart")}>Giỏ hàng <b>{totalQuantity}</b></button>
@@ -124,7 +124,7 @@ export default function Storefront() {
       {view === "catalog" && <>
         <section className="store-hero">
           <div><span className="eyebrow">NÂNG CẤP GÓC MÁY CỦA BẠN</span><h1>Linh kiện chuẩn.<br /><em>Hiệu năng vượt trội.</em></h1><p>Khám phá CPU, GPU, RAM, SSD và nhiều linh kiện máy tính chính hãng.</p><button onClick={() => document.getElementById("product-list")?.scrollIntoView({ behavior: "smooth" })}>Khám phá sản phẩm <span>↘</span></button></div>
-          <div className="hero-art"><div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /><div className="chip-art"><span>PEKO</span><strong>TECH</strong><small>PERFORMANCE</small></div><div className="hero-tag">BUILD YOUR<br />NEXT LEVEL</div></div>
+          <div className="hero-art"><div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /><div className="chip-art"><span>TAI</span><strong>TECH</strong><small>PERFORMANCE</small></div><div className="hero-tag">BUILD YOUR<br />NEXT LEVEL</div></div>
         </section>
 
         <main className="store-main" id="product-list">
@@ -137,7 +137,7 @@ export default function Storefront() {
           {loading ? <div className="store-empty">Đang tải sản phẩm...</div> : visibleProducts.length === 0 ? <div className="store-empty">Không tìm thấy sản phẩm phù hợp.</div> : (
             <div className="product-grid">
               {visibleProducts.map((p) => <article className="product-card" key={p._id}>
-                <div className="product-image">{p.image ? <img src={storeImageUrl(p.image)} alt={p.name} /> : <div className="image-placeholder">PEKO<span>TECH</span></div>}<span className={p.stock > 0 ? "stock-badge" : "stock-badge out"}>{p.stock > 0 ? "Còn hàng" : "Hết hàng"}</span></div>
+                <div className="product-image">{p.image ? <img src={storeImageUrl(p.image)} alt={p.name} /> : <div className="image-placeholder">TAI<span>TECH</span></div>}<span className={p.stock > 0 ? "stock-badge" : "stock-badge out"}>{p.stock > 0 ? "Còn hàng" : "Hết hàng"}</span></div>
                 <div className="product-info"><span className="product-category">{p.category?.name || "Linh kiện"}</span><h3>{p.name}</h3><small>SKU: {p.sku}</small><div className="product-bottom"><strong>{formatVnd(p.sale_price)}</strong><button disabled={p.stock < 1} onClick={() => addToCart(p)} aria-label="Thêm vào giỏ hàng">＋</button></div></div>
               </article>)}
             </div>
@@ -156,7 +156,7 @@ export default function Storefront() {
 
       {view === "success" && success && <main className="store-main success-panel"><div className="success-icon">✓</div><span className="eyebrow">ĐẶT HÀNG THÀNH CÔNG</span><h2>Cảm ơn bạn đã mua hàng!</h2><p>Đơn hàng <b>{success.invoice_code}</b> đã được ghi nhận.</p><p>Tổng giá trị: <strong>{formatVnd(success.total)}</strong></p><p>Trạng thái: Chờ xác nhận</p><button className="primary-button" onClick={() => { setSuccess(null); setView("catalog"); }}>Tiếp tục mua sắm</button></main>}
 
-      <footer className="store-footer"><div className="store-brand"><span className="brand-mark">P</span><span>PEKO<span className="brand-light">TECH</span><small>LINH KIỆN MÁY TÍNH</small></span></div><p>Website kinh doanh linh kiện máy tính</p><small>© {new Date().getFullYear()} PEKOTECH. All rights reserved.</small></footer>
+      <footer className="store-footer"><div className="store-brand"><span className="brand-mark">P</span><span>PEKO<span className="brand-light">TECH</span><small>LINH KIỆN MÁY TÍNH</small></span></div><p>Website kinh doanh linh kiện máy tính</p><small>© {new Date().getFullYear()} TAI TECH. All rights reserved.</small></footer>
     </div>
   );
 }
