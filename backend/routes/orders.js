@@ -9,7 +9,8 @@ const {
   getOrders,
   getOrderById,
   createOrder,
-  deleteOrder,\n  updateOrderStatus,
+  deleteOrder,
+  updateOrderStatus,
 } = require("../controllers/orderController");
 
 // ============================================
