@@ -21,12 +21,13 @@ import Storefront from "./pages/Storefront";
 export default function App() {
   return (
     <Routes>
+      <Route path="/" element={<Storefront />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/shop" element={<Storefront />} />
       <Route path="/shop/*" element={<Storefront />} />
       {/* ===========================
           LOGIN
       =========================== */}
-      <Route path="/" element={<Login />} />
 
       {/* ===========================
           HOME
